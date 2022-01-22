@@ -9,6 +9,6 @@ def PowerAinB(value, power):
 
 print('Введите число A')
 number = int(input())
-print('Введите степень')
+print('Введите степень числа, в которую нужно возвести число А')
 power = int(input())
 print(PowerAinB(number, power))
