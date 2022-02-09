@@ -55,7 +55,7 @@ def Init_game():
 def Check_step(value, max_candys_by_step):
     while not value.isnumeric():
         print(f'Ошибка ввода! Введите число от 1 до {max_candys_by_step}')
-        value = input()
+        value = input('Сколько конфет Вы хотите взять? ')
     step = int(value)
     return step
 
@@ -63,7 +63,7 @@ def Check_step(value, max_candys_by_step):
 def Next_move(current_candys, max_candys_by_step, players, current_player):
     if current_player == 0:
         print(f'{players[current_player]}, Ваш ход! Возьмите не более {max_candys_by_step} конфет. Всего конфет осталось: {current_candys}')
-        step = Check_step(input(), max_candys_by_step)
+        step = Check_step(input('Сколько конфет Вы хотите взять? '), max_candys_by_step)
 
         while (step < 1) or (step > max_candys_by_step) or (step > current_candys):
             if step <= 0:
@@ -75,7 +75,7 @@ def Next_move(current_candys, max_candys_by_step, players, current_player):
             if step > current_candys:
                 print(
                     f'{players[current_player]}, конфет осталось всего {current_candys}! Вы не можете взять больше! Попробуйте еще раз?')
-            step = Check_step(input(), max_candys_by_step)
+            step = Check_step(input('Сколько конфет Вы хотите взять? '), max_candys_by_step)
     else:
         step = Player_bot(current_candys, max_candys_by_step)
         print(f'{players[current_player]} забирает {step} конфет')
